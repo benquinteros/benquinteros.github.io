@@ -1,0 +1,102 @@
+{% extends "base.html" %} {% block title %}Resume | {{ config.title }}{%
+endblock title %} {% block content %} {% set resume =
+load_data(path="data/resume.toml") %}
+
+<article aria-labelledby="resume-title">
+  <header>
+    <h1 id="resume-title">{{ resume.basics.name }}</h1>
+    <p>{{ resume.basics.headline }}</p>
+    <p>
+      {{ resume.basics.location }} {% if resume.basics.email %}
+      <span aria-hidden="true"> · </span>
+      <a href="mailto:{{ resume.basics.email }}">{{ resume.basics.email }}</a>
+      {% endif %}
+      <span aria-hidden="true"> · </span>
+      <a href="{{ resume.basics.website }}" aria-label="Visit personal website"
+        >Website</a
+      >
+    </p>
+    <p>{{ resume.basics.summary }}</p>
+    {% if resume.links %}
+    <ul aria-label="Professional links">
+      {% for link in resume.links %}
+      <li>
+        <a href="{{ link.url }}" aria-label="Visit {{ link.label }} profile"
+          >{{ link.label }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <section aria-labelledby="experience-title">
+    <h2 id="experience-title">Experience</h2>
+    {% for item in resume.experience %}
+    <article>
+      <h3>{{ item.role }} — {{ item.company }}</h3>
+      <p>
+        {{ item.start_date }} to {{ item.end_date }}{% if item.location %} · {{
+        item.location }}{% endif %}
+      </p>
+      <p>{{ item.summary }}</p>
+      {% if item.highlights %}
+      <ul>
+        {% for highlight in item.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+
+  <section aria-labelledby="education-title">
+    <h2 id="education-title">Education</h2>
+    <ul>
+      {% for item in resume.education %}
+      <li>
+        <strong>{{ item.institution }}</strong> — {{ item.study_type }} {{
+        item.area }} ({{ item.start_date }} - {{ item.end_date }})
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="skills-title">
+    <h2 id="skills-title">Skills</h2>
+    <ul>
+      {% for skill in resume.skills %}
+      <li>
+        <strong>{{ skill.name }}:</strong> {{ skill.keywords | join(sep=", ") }}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% if resume.awards %}
+  <section aria-labelledby="awards-title">
+    <h2 id="awards-title">Honors & Awards</h2>
+    <ul>
+      {% for award in resume.awards %}
+      <li>{{ award.title }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %} {% if resume.projects %}
+  <section aria-labelledby="selected-projects-title">
+    <h2 id="selected-projects-title">Selected Projects</h2>
+    <ul>
+      {% for project in resume.projects %}
+      <li>
+        <a href="{{ project.url }}" aria-label="Open project {{ project.name }}"
+          >{{ project.name }}</a
+        >
+        <p>{{ project.summary }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
+{% endblock content %}

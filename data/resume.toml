@@ -1,0 +1,193 @@
+[basics]
+name = "Ben Quinteros"
+headline = "Senior QA Automation Engineer"
+location = "Australia"
+website = "https://benquinteros.com"
+summary = "QA and reliability engineer with deep experience building automation platforms, CI/CD integrations, and observability-driven quality practices across fintech and SaaS."
+
+[[links]]
+label = "LinkedIn"
+url = "https://www.linkedin.com/in/benjaminquinteros"
+
+[[experience]]
+company = "Greenstone Financial Services"
+role = "Senior Software QA Engineer"
+start_date = "2025-03"
+end_date = "Present"
+location = "Sydney, NSW, Australia"
+summary = "Led modern QA automation strategy and framework rollout using Playwright and CI/CD integration."
+highlights = [
+  "Designed and implemented a Playwright end-to-end testing framework replacing legacy Selenium",
+  "Integrated test framework into Azure DevOps pipelines for release-gated automation",
+  "Built custom Teams notifications and observability dashboards for test outcomes",
+  "Implemented visual regression testing for large-scale dynamic PDF rendering",
+  "Built API automation using generated OpenAPI clients to improve onboarding",
+  "Led workshops and pair-programming sessions to uplift QA and engineering teams"
+]
+
+[[experience]]
+company = "Simpology Australia"
+role = "QA Automation Lead"
+start_date = "2024-03"
+end_date = "2025-01"
+location = "Sydney, NSW, Australia"
+summary = "Led company-wide automation strategy, roadmap, and platform implementation."
+highlights = [
+  "Defined organizational test automation strategy and rollout roadmap",
+  "Built Playwright E2E and Postman/Newman API frameworks with CI/CD integration",
+  "Drove shift-left testing and improved application testability with developer collaboration",
+  "Migrated legacy Cypress/Selenium suites and implemented infrastructure automation",
+  "Embedded observability and business metrics for ROI and quality reporting"
+]
+
+[[education]]
+institution = "Western Sydney University"
+study_type = "Bachelor"
+area = "Information and Communications Technology"
+start_date = "2013"
+end_date = "2016"
+
+[[education]]
+institution = "Austin Peay State University"
+study_type = "Bachelor"
+area = "Computer Science"
+start_date = "2015"
+end_date = "2015"
+
+[[experience]]
+company = "DroneShield"
+role = "Senior Software QA Engineer"
+start_date = "2023-10"
+end_date = "2024-03"
+location = "Sydney, NSW, Australia"
+summary = "Owned QA automation and release quality for distributed systems and hardware/software integration."
+highlights = [
+  "Designed and maintained automation frameworks in CI/CD pipelines",
+  "Improved frontend and integration test coverage across complex distributed systems",
+  "Partnered with engineering teams on risk-based test planning and release readiness"
+]
+
+[[experience]]
+company = "Rokt"
+role = "Senior Site Reliability Engineer"
+start_date = "2023-02"
+end_date = "2023-09"
+location = "Sydney, NSW, Australia"
+summary = "Led reliability initiatives across cloud-native services with incident management ownership."
+highlights = [
+  "Led incident management and improved operational playbooks",
+  "Implemented SLO and alerting improvements",
+  "Drove service-catalog and reliability scorecard improvements"
+]
+
+[[experience]]
+company = "Rokt"
+role = "Senior Software Engineer (QA)"
+start_date = "2021-05"
+end_date = "2023-01"
+location = "Sydney, NSW, Australia"
+summary = "Built multi-language quality platforms for functional, contract, visual, and load testing."
+highlights = [
+  "Rolled out visual regression and contract testing across multiple services",
+  "Built performance and traffic-replay load testing solutions",
+  "Delivered training, demos, and architecture documentation across teams"
+]
+
+[[experience]]
+company = "Rokt"
+role = "Software Engineer (QA)"
+start_date = "2020-02"
+end_date = "2021-05"
+location = "Sydney, Australia"
+summary = "Built automation for microservices and ML-adjacent systems in an agile delivery environment."
+highlights = [
+  "Implemented functional, integration, and contract test coverage",
+  "Improved existing Selenium/Gauge end-to-end framework",
+  "Collaborated cross-functionally on test strategy and edge-case design"
+]
+
+[[experience]]
+company = "Prospa"
+role = "Software Development Engineer in Test"
+start_date = "2019-05"
+end_date = "2020-01"
+location = "Sydney, Australia"
+summary = "Built reusable automation frameworks and enabled CI/CD-based quality gates."
+highlights = [
+  "Built Protractor UI and Mocha/Chai API test frameworks",
+  "Implemented Appium mobile automation and test-data generation tooling",
+  "Coached manual testers and developers on test automation practices"
+]
+
+[[experience]]
+company = "Medical Director"
+role = "Software Engineer"
+start_date = "2017-10"
+end_date = "2019-04"
+location = "Sydney, Australia"
+summary = "Worked across full-stack development, TDD, and CI/CD automation in agile teams."
+highlights = [
+  "Delivered end-to-end product features",
+  "Maintained and improved CI/CD pipelines",
+  "Contributed to test-first engineering practices"
+]
+
+[[experience]]
+company = "Medical Director"
+role = "Junior Software Engineer"
+start_date = "2016-10"
+end_date = "2017-09"
+location = "Sydney, Australia"
+summary = "Contributed to product delivery and engineering quality improvements."
+highlights = []
+
+[[experience]]
+company = "Medical Director"
+role = "Graduate Software Engineer"
+start_date = "2016-04"
+end_date = "2016-09"
+location = "Sydney, Australia"
+summary = "Completed rotations in software development and test automation."
+highlights = [
+  "Built feature automation and dashboard tooling",
+  "Delivered bug fixes and enhancements across products"
+]
+
+[[skills]]
+name = "Top Skills"
+keywords = ["Test Automation", "Test Driven Development", "DevOps"]
+
+[[skills]]
+name = "Automation & QA"
+keywords = ["Playwright", "Selenium", "Cypress", "Postman", "Newman", "Visual Regression", "Contract Testing"]
+
+[[skills]]
+name = "Cloud & DevOps"
+keywords = ["AWS", "Azure", "Kubernetes", "Terraform", "Docker", "Azure DevOps", "Buildkite", "Octopus Deploy"]
+
+[[skills]]
+name = "Languages & Scripting"
+keywords = ["TypeScript", "JavaScript", "C#", "Python", "Go", "SQL", "PowerShell", "Bash", "YAML"]
+
+[[skills]]
+name = "Languages Spoken"
+keywords = ["Spanish (Elementary)"]
+
+[[awards]]
+title = "Australian Computer Society Foundation Scholarship"
+
+[[awards]]
+title = "Dean's Merit List"
+
+[[awards]]
+title = "Australian Government Scholarship"
+
+[[certifications]]
+title = "Bachelor of Information and Communications Technology"
+issuer = "Western Sydney University"
+date = "2016"
+
+[[projects]]
+name = "Angla"
+summary = "A fishing weather and Instagram-style social app."
+url = "https://angla.xyz/"

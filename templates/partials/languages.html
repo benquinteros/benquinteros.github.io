@@ -1,0 +1,16 @@
+{% set resume = load_data(path="data/resume.toml") %}
+<section class="card p-6 rounded-xl bg-[var(--card)] shadow-sm">
+  <h3 class="text-2xl font-semibold mb-4 border-b pb-2 border-[var(--primary)]">
+    Languages
+  </h3>
+  {% set spoken = false %}
+  <ul class="text-sm space-y-1">
+    {% for skill in resume.skills %} {% if skill.name == "Languages Spoken" %}
+    {% set_global spoken = true %} {% for lang in skill.keywords %}
+    <li>{{ lang }}</li>
+    {% endfor %} {% endif %} {% endfor %}
+  </ul>
+  {% if spoken == false %}
+  <p class="text-sm opacity-80">No spoken languages listed.</p>
+  {% endif %}
+</section>

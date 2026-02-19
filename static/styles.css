@@ -1,0 +1,60 @@
+:root {
+  --max-width: 48rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.site-header,
+main,
+.site-footer {
+  width: min(var(--max-width), 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: var(--space-3) 0 var(--space-2);
+}
+
+nav {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+main {
+  padding: 0 0 var(--space-3);
+}
+
+section,
+article {
+  margin-bottom: var(--space-3);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+.site-footer {
+  padding-bottom: var(--space-3);
+}

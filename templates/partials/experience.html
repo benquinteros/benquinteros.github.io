@@ -1,0 +1,32 @@
+{% set resume = load_data(path="data/resume.toml") %}
+<section class="card p-6 rounded-xl bg-[var(--card)] shadow-sm">
+  <h3 class="text-2xl font-semibold mb-4 border-b pb-2 border-[var(--primary)]">
+    Work Experience
+  </h3>
+  <div class="space-y-6">
+    {% for item in resume.experience %}
+    <div>
+      <div class="flex justify-between items-start gap-4">
+        <div>
+          <h4 class="font-semibold text-lg">{{ item.role }}</h4>
+          <p class="text-[var(--primary)] text-sm">
+            {{ item.company }}, {{ item.location }}
+          </p>
+        </div>
+        <span class="text-xs px-2 py-1 rounded bg-[var(--primary)] text-white"
+          >{{ item.start_date }} - {{ item.end_date }}</span
+        >
+      </div>
+      {% if item.summary %}
+      <p class="text-sm mt-2 opacity-90">{{ item.summary }}</p>
+      {% endif %} {% if item.highlights and item.highlights | length > 0 %}
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+        {% for highlight in item.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
