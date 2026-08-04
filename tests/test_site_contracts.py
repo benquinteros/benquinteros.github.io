@@ -1,10 +1,32 @@
 from html.parser import HTMLParser
 from pathlib import Path
+import subprocess
+import tempfile
 import tomllib
 import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+_BUILD_DIRECTORY = None
+_BUILT_SITE = None
+
+
+def built_site() -> Path:
+    global _BUILD_DIRECTORY, _BUILT_SITE
+    if _BUILT_SITE is None:
+        _BUILD_DIRECTORY = tempfile.TemporaryDirectory(prefix="portfolio-site-")
+        _BUILT_SITE = Path(_BUILD_DIRECTORY.name)
+        result = subprocess.run(
+            ["zola", "build", "--output-dir", str(_BUILT_SITE), "--force"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            raise AssertionError(
+                f"Zola build failed:\n{result.stdout}\n{result.stderr}"
+            )
+    return _BUILT_SITE
 
 
 class Document(HTMLParser):
@@ -73,8 +95,9 @@ class ResumeDataContracts(unittest.TestCase):
 class BuiltSiteContracts(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.home_html = (ROOT / "public/index.html").read_text()
-        cls.print_html = (ROOT / "public/resume/print/index.html").read_text()
+        site = built_site()
+        cls.home_html = (site / "index.html").read_text()
+        cls.print_html = (site / "resume/print/index.html").read_text()
         cls.home = Document(cls.home_html)
         cls.print_document = Document(cls.print_html)
 
@@ -111,15 +134,22 @@ class BuiltSiteContracts(unittest.TestCase):
 class FontDeliveryContracts(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.home_html = (ROOT / "public/index.html").read_text()
+        cls.site = built_site()
+        cls.home_html = (cls.site / "index.html").read_text()
 
     def test_source_serif_is_shipped_and_preloaded(self) -> None:
-        asset = ROOT / "public/fonts/source-serif-4-latin-wght-normal.woff2"
+        asset = self.site / "fonts/source-serif-4-latin-wght-normal.woff2"
         self.assertTrue(asset.is_file(), "Source Serif 4 is not in the built site")
         self.assertGreater(asset.stat().st_size, 10_000)
         self.assertIn(
             "fonts/source-serif-4-latin-wght-normal.woff2", self.home_html
         )
+
+
+class ResponsiveStyleContracts(unittest.TestCase):
+    def test_body_does_not_force_a_viewport_wider_than_320px(self) -> None:
+        styles = (ROOT / "static/styles.css").read_text()
+        self.assertNotIn("min-width: 20rem", styles)
 
 
 if __name__ == "__main__":
