@@ -1,0 +1,29 @@
+{% set resume = load_data(path="data/resume.toml") %}
+<section class="section" id="background" aria-labelledby="background-label">
+  <div class="section-intro">
+    <h2 class="section-label" id="background-label"><span class="section-num">06</span> Background</h2>
+    <p class="section-note">Education and recognition.</p>
+  </div>
+  <div class="section-content background-grid">
+    <div>
+      <h3 class="subsection-label">Education</h3>
+      <div class="background-list">
+        {% for item in resume.education %}
+        <article class="background-entry">
+          <p class="background-date">{{ item.start_date }} — {{ item.end_date }}</p>
+          <h4>{{ item.institution }}</h4>
+          <p>{{ item.study_type }}, {{ item.area }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <h3 class="subsection-label">Recognition</h3>
+      <ul class="award-list">
+        {% for award in resume.awards %}
+        <li>{{ award.title }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
