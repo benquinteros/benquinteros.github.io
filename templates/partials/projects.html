@@ -1,16 +1,15 @@
 {% set resume = load_data(path="data/resume.toml") %}
-<section class="section" aria-labelledby="projects-label">
-  <h2 class="section-label" id="projects-label">
-    <span class="section-num">03</span> Projects
-  </h2>
-  <dl class="rows rows--projects">
+<section class="section" id="projects" aria-labelledby="projects-label">
+  <div class="section-intro">
+    <h2 class="section-label" id="projects-label"><span class="section-num">04</span> Independent Work</h2>
+    <p class="section-note">A project outside the day job.</p>
+  </div>
+  <div class="section-content project-list">
     {% for project in resume.projects %}
-    <div class="row">
-      <dt class="row-label">
-        {% if project.url %}<a href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}
-      </dt>
-      <dd class="row-value">{{ project.summary }}</dd>
-    </div>
+    <article class="project-entry">
+      <h3>{% if project.url %}<a href="{{ project.url }}">{{ project.name }} <span aria-hidden="true">↗</span></a>{% else %}{{ project.name }}{% endif %}</h3>
+      <p>{{ project.summary }}</p>
+    </article>
     {% endfor %}
-  </dl>
+  </div>
 </section>

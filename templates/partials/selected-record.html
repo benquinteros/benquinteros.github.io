@@ -1,0 +1,38 @@
+{% set resume = load_data(path="data/resume.toml") %}
+<section class="section section--record" id="selected-record" aria-labelledby="selected-record-label">
+  <div class="section-intro">
+    <h2 class="section-label" id="selected-record-label">
+      <span class="section-num">01</span> Selected Record
+    </h2>
+    <p class="section-note">Recent work in product delivery, quality, and platform observability.</p>
+  </div>
+  <div class="section-content selected-record-list">
+    {% for item in resume.experience %}
+    {% if item.featured %}
+    <article class="selected-entry">
+      <div class="entry-dates">{{ item.start_date }} — {{ item.end_date }}</div>
+      <div class="entry-body">
+        <h3 class="entry-role">{{ item.role }}</h3>
+        <p class="entry-org">{{ item.company }}{% if item.location %} · {{ item.location }}{% endif %}</p>
+        <p class="entry-summary">{{ item.summary }}</p>
+        <ul class="entry-highlights">
+          {% for highlight in item.featured_highlights %}
+          <li>{{ highlight }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% if item.evidence %}
+      <aside class="entry-evidence" aria-label="Evidence from {{ item.role }} at {{ item.company }}">
+        {% for note in item.evidence %}
+        <div class="evidence-note">
+          <h4>{{ note.title }}</h4>
+          <p>{{ note.detail }}</p>
+        </div>
+        {% endfor %}
+      </aside>
+      {% endif %}
+    </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
