@@ -1,4 +1,7 @@
 public/
+.superpowers/
+.superdesign/
+.worktrees/
 .DS_Store
 themes/*/.DS_Store
 themes/*/.git
