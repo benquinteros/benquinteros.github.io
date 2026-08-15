@@ -1,20 +1,15 @@
 {% set resume = load_data(path="data/resume.toml") %}
-<section class="hero" aria-labelledby="name">
-  <p class="hero-kicker">{{ resume.basics.headline }}</p>
-  <h1 id="name">{{ resume.basics.name }}</h1>
+<section class="hero" aria-labelledby="hero-title">
+  <p class="hero-kicker">{{ resume.basics.headline }} · {{ resume.basics.location }}</p>
+  <h1 id="hero-title">{{ resume.basics.hero_title }}</h1>
   {% if resume.basics.summary %}
   <p class="hero-summary">{{ resume.basics.summary }}</p>
   {% endif %}
-  <ul class="hero-contact">
-    <li>{{ resume.basics.location }}</li>
+  <ul class="hero-meta">
+    <li>{{ resume.basics.name }}</li>
     {% if resume.basics.email %}
     <li><a href="mailto:{{ resume.basics.email }}">{{ resume.basics.email }}</a></li>
     {% endif %}
-    {% if resume.basics.website %}
-    <li><a href="{{ resume.basics.website }}">{{ resume.basics.website | replace(from="https://", to="") }}</a></li>
-    {% endif %}
-    {% for link in resume.links %}
-    <li><a href="{{ link.url }}">{{ link.label }}</a></li>
-    {% endfor %}
+    <li>TypeScript · C# · Python · Go</li>
   </ul>
 </section>

@@ -1,0 +1,21 @@
+{% set resume = load_data(path="data/resume.toml") %}
+<section class="section" id="career-index" aria-labelledby="career-index-label">
+  <div class="section-intro">
+    <h2 class="section-label" id="career-index-label"><span class="section-num">03</span> Career Index</h2>
+    <p class="section-note">The complete earlier record.</p>
+  </div>
+  <div class="section-content career-list">
+    {% for item in resume.experience %}
+    {% if not item.featured %}
+    <article class="career-row">
+      <div class="career-dates">{{ item.start_date }} — {{ item.end_date }}</div>
+      <div class="career-position">
+        <h3>{{ item.role }}</h3>
+        <p>{{ item.company }}</p>
+      </div>
+      <p class="career-summary">{{ item.summary }}</p>
+    </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{% set resume = load_data(path="data/resume.toml") %}
+<section class="section" id="practice" aria-labelledby="practice-label">
+  <div class="section-intro">
+    <h2 class="section-label" id="practice-label"><span class="section-num">02</span> Practice</h2>
+    <p class="section-note">How the work gets done.</p>
+  </div>
+  <div class="section-content practice-grid">
+    {% for item in resume.practice %}
+    <article class="practice-item">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.summary }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>

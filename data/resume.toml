@@ -1,13 +1,26 @@
 [basics]
 name = "Ben Paternostro"
 headline = "Senior Software Engineer"
+hero_title = "Engineering across the whole delivery system."
 location = "Sydney, Australia"
 website = "https://benpaternostro.com"
 email = "contact@benpaternostro.com"
-summary = "Full-stack engineer with deep roots in quality and reliability engineering, now building primarily with AI coding agents."
+summary = "Full-stack engineer shipping customer-facing software with AI-assisted workflows, rigorous testing, and production observability."
 [[links]]
 label = "LinkedIn"
 url = "https://www.linkedin.com/in/benpaternostro"
+
+[[practice]]
+title = "Product delivery"
+summary = "Own features across implementation, deployment, and production, with short feedback loops back to the team and customer."
+
+[[practice]]
+title = "AI-assisted workflow"
+summary = "Use coding agents for substantial delivery while retaining planning, testing, review, observability, and cost discipline."
+
+[[practice]]
+title = "Quality as architecture"
+summary = "Build testability, release confidence, and system visibility into the engineering platform rather than adding them at the end."
 
 [[experience]]
 company = "Greenstone Financial Services"
@@ -16,6 +29,16 @@ start_date = "Mar 2026"
 end_date = "Present"
 location = "Sydney, NSW, Australia"
 summary = "Own feature delivery and platform observability across customer-facing insurance and financial services portals serving tens of thousands of users."
+featured = true
+featured_highlights = [
+  "Deliver most feature work with coding agents, applying established planning and implementation patterns while managing context quality and model cost",
+  "Led adoption of OpenTelemetry, OpenFeature, and Storybook for observability, progressive delivery, and component development"
+]
+evidence = [
+  { title = "~2-minute E2E feedback", detail = "Ephemeral CI environments, cached sessions, and parallel execution shortened the end-to-end feedback loop." },
+  { title = "Routine daytime releases", detail = "Out-of-hours deployment and manual production validation became the exception rather than the norm." },
+  { title = "Unified production visibility", detail = "Logs, metrics, traces, and real-user monitoring were consolidated in Datadog." }
+]
 highlights = [
   "Deliver most feature work with coding agents (Claude Code, Codex, GitHub Copilot), applying established planning and implementation patterns while managing context quality and model cost",
   "Hold AI-written code to the same bar as any other change (TDD, review, observability), using MCP integrations to give agents the project context needed for planning and implementation",
@@ -33,6 +56,11 @@ start_date = "Mar 2025"
 end_date = "Feb 2026"
 location = "Sydney, NSW, Australia"
 summary = "Owned test automation strategy, frameworks, and test observability across customer-facing portals."
+featured = true
+featured_highlights = [
+  "Designed and implemented a Playwright end-to-end testing framework replacing legacy Selenium",
+  "Implemented visual regression testing for large-scale dynamic PDF rendering"
+]
 highlights = [
   "Designed and implemented a Playwright end-to-end testing framework replacing legacy Selenium",
   "Integrated test framework into Azure DevOps pipelines for release-gated automation",
@@ -50,6 +78,11 @@ start_date = "Mar 2024"
 end_date = "Jan 2025"
 location = "Sydney, NSW, Australia"
 summary = "Led company-wide automation strategy, roadmap, and platform implementation."
+featured = true
+featured_highlights = [
+  "Built Playwright E2E and Postman/Newman API frameworks with CI/CD integration",
+  "Mentored and upskilled manual testers into automation engineers through workshops, pairing, and documentation"
+]
 highlights = [
   "Defined organisational test automation strategy and rollout roadmap",
   "Built Playwright E2E and Postman/Newman API frameworks with CI/CD integration",
@@ -66,6 +99,7 @@ start_date = "Oct 2023"
 end_date = "Mar 2024"
 location = "Sydney, NSW, Australia"
 summary = "Owned QA automation and release quality for distributed systems and hardware/software integration."
+featured = false
 highlights = [
   "Designed and maintained automation frameworks in CI/CD pipelines",
   "Improved frontend and integration test coverage across complex distributed systems",
@@ -79,6 +113,7 @@ start_date = "Feb 2023"
 end_date = "Sep 2023"
 location = "Sydney, NSW, Australia"
 summary = "Led reliability initiatives across cloud-native services with incident management ownership."
+featured = false
 highlights = [
   "Led high-severity incidents through investigation, mitigation, and resolution, and facilitated incident-management training across teams",
   "Implemented SLOs and tuned alerting strategies to reduce operational noise",
@@ -94,6 +129,7 @@ start_date = "May 2021"
 end_date = "Jan 2023"
 location = "Sydney, NSW, Australia"
 summary = "Built multi-language quality platforms for functional, contract, visual, and load testing across a 100+ service ecosystem."
+featured = false
 highlights = [
   "Implemented Pact contract testing across more than a dozen services in multiple languages",
   "Rolled out visual regression testing, reducing customer-reported UI defects and enabling safer CI/CD deployments",
@@ -108,6 +144,7 @@ start_date = "Feb 2020"
 end_date = "May 2021"
 location = "Sydney, Australia"
 summary = "Built automation for microservices and ML-adjacent systems in an agile delivery environment."
+featured = false
 highlights = [
   "Implemented functional, integration, and contract test coverage",
   "Improved existing Selenium/Gauge end-to-end framework",
@@ -121,6 +158,7 @@ start_date = "May 2019"
 end_date = "Jan 2020"
 location = "Sydney, Australia"
 summary = "Built reusable automation frameworks and enabled CI/CD-based quality gates."
+featured = false
 highlights = [
   "Built Protractor UI and Mocha/Chai API test frameworks",
   "Implemented Appium mobile automation and test-data generation tooling",
@@ -134,6 +172,7 @@ start_date = "Oct 2017"
 end_date = "Apr 2019"
 location = "Sydney, Australia"
 summary = "Worked across full-stack development, TDD, and CI/CD automation in agile teams."
+featured = false
 highlights = [
   "Delivered end-to-end product features",
   "Maintained and improved CI/CD pipelines",
@@ -147,6 +186,7 @@ start_date = "Apr 2016"
 end_date = "Sep 2017"
 location = "Sydney, Australia"
 summary = "Joined through a graduate engineering program with rotations across software development and test automation."
+featured = false
 highlights = [
   "Built feature automation and dashboard tooling",
   "Delivered bug fixes and enhancements across frontend and backend systems"

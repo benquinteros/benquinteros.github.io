@@ -1,9 +1,10 @@
 {% set resume = load_data(path="data/resume.toml") %}
-<section class="section" aria-labelledby="skills-label">
-  <h2 class="section-label" id="skills-label">
-    <span class="section-num">02</span> Skills
-  </h2>
-  <dl class="rows">
+<section class="section" id="toolkit" aria-labelledby="skills-label">
+  <div class="section-intro">
+    <h2 class="section-label" id="skills-label"><span class="section-num">05</span> Toolkit</h2>
+    <p class="section-note">Languages, platforms, and engineering methods.</p>
+  </div>
+  <dl class="section-content rows">
     {% for skill in resume.skills %}
     <div class="row">
       <dt class="row-label">{{ skill.name }}</dt>

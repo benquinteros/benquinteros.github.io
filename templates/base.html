@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
-    <meta name="theme-color" content="#ffffff" id="theme-color-meta" />
+    <meta name="theme-color" content="#F3F0E8" id="theme-color-meta" />
     <link
       rel="preload"
       href="{{ get_url(path='fonts/inter-latin-wght-normal.woff2') }}"
@@ -13,8 +13,16 @@
       type="font/woff2"
       crossorigin
     />
+    <link
+      rel="preload"
+      href="{{ get_url(path='fonts/source-serif-4-latin-wght-normal.woff2') }}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="{{ get_url(path='styles.css') }}" />
-    <link rel="icon" href="{{ get_url(path='favicon.ico') }}" sizes="any" />
+    <link rel="icon" href="{{ get_url(path='favicon.ico') }}" sizes="16x16 32x32" />
+    <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}" sizes="any" />
     <script>
       (function () {
         try {
@@ -34,6 +42,9 @@
       <div class="container topbar-inner">
         <a class="brand" href="{{ get_url(path='@/_index.md') }}">{{ resume.basics.name }}</a>
         <nav class="topnav" aria-label="Primary">
+          <a class="nav-section-link" href="#selected-record">Selected Record</a>
+          <a class="nav-section-link" href="#practice">Practice</a>
+          <a class="nav-section-link" href="#career-index">Career Index</a>
           <a href="{{ get_url(path='@/resume-print.md') }}">Résumé PDF</a>
           {% for link in resume.links %}
           <a href="{{ link.url }}">{{ link.label }}</a>
@@ -62,12 +73,13 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; {{ now() | date(format="%Y") }} {{ resume.basics.name }}</p>
+        <p>{{ resume.basics.name }} &nbsp;·&nbsp; {{ resume.basics.location }}</p>
         <p>
-          <a href="{{ get_url(path='@/resume-print.md') }}">Résumé PDF</a>
+          {% if resume.basics.email %}<a href="mailto:{{ resume.basics.email }}">Email</a>&nbsp;·&nbsp; {% endif %}
           {% for link in resume.links %}
-          &nbsp;·&nbsp; <a href="{{ link.url }}">{{ link.label }}</a>
+          <a href="{{ link.url }}">{{ link.label }}</a>&nbsp;·&nbsp;
           {% endfor %}
+          <a href="{{ get_url(path='@/resume-print.md') }}">Résumé PDF</a>
         </p>
       </div>
     </footer>
@@ -87,7 +99,7 @@
             "aria-label",
             dark ? "Switch to light theme" : "Switch to dark theme"
           );
-          if (meta) meta.setAttribute("content", dark ? "#0d0d0f" : "#ffffff");
+          if (meta) meta.setAttribute("content", dark ? "#191815" : "#F3F0E8");
         }
         btn.addEventListener("click", function () {
           var next = effective() === "dark" ? "light" : "dark";
