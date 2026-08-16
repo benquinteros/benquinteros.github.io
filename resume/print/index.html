@@ -1,0 +1,334 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ben Paternostro — Resume</title>
+    <meta name="description" content="Printable resume for Ben Paternostro" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("https://benpaternostro.com/fonts/inter-latin-wght-normal.woff2") format("woff2");
+      }
+      :root {
+        --ink: #111;
+        --muted: #555;
+        --rule: #bbb;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #f4f4f5;
+        color: var(--ink);
+        font-family: "Inter", Arial, Helvetica, "Segoe UI", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .page {
+        max-width: 820px;
+        margin: 12px auto 24px;
+        background: #fff;
+        padding: 40px 48px 48px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+      }
+      h1 { font-size: 26px; margin: 0 0 2px; }
+      .headline { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
+      .contact { font-size: 12px; color: var(--muted); margin: 0 0 12px; line-height: 1.5; }
+      .contact a { color: var(--muted); text-decoration: none; }
+      .summary { font-size: 13.5px; line-height: 1.5; margin: 0; }
+      hr.top { border: 0; border-top: 1px solid var(--rule); margin: 12px 0 4px; }
+      h2 {
+        font-size: 12.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 4px;
+        margin: 20px 0 10px;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+      .role { margin: 0 0 13px; break-inside: avoid; page-break-inside: avoid; }
+      .role-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: baseline;
+      }
+      .role-title { font-weight: 700; font-size: 13.5px; }
+      .role-company { color: var(--muted); }
+      .role-dates { color: var(--muted); font-size: 12px; white-space: nowrap; }
+      .role-summary { font-size: 12.5px; color: #333; margin: 3px 0 4px; }
+      ul { margin: 5px 0 0; padding-left: 18px; }
+      li { font-size: 12.5px; line-height: 1.45; margin-bottom: 3px; }
+      .skill-row { font-size: 12.5px; line-height: 1.5; margin-bottom: 4px; }
+      .skill-label { font-weight: 700; }
+      .toolbar {
+        max-width: 820px;
+        margin: 20px auto 0;
+        padding: 0 12px;
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+      .toolbar button,
+      .toolbar a {
+        font: inherit;
+        font-size: 13px;
+        padding: 8px 14px;
+        border: 1px solid var(--ink);
+        border-radius: 6px;
+        cursor: pointer;
+        text-decoration: none;
+        line-height: 1;
+      }
+      .toolbar button { background: var(--ink); color: #fff; }
+      .toolbar a { background: #fff; color: var(--ink); }
+      .hint { font-size: 11px; color: var(--muted); text-align: center; padding: 14px 0 28px; }
+      @media print {
+        html, body { background: #fff; }
+        .page { box-shadow: none; margin: 0; max-width: none; padding: 0; }
+        .toolbar, .hint { display: none !important; }
+        a { color: var(--ink); }
+        @page { size: A4; margin: 14mm; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <a
+        href="https://benpaternostro.com/"
+        onclick="if (history.length > 1 && document.referrer.startsWith(location.origin)) { history.back(); return false; }"
+        >← Back</a
+      >
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <main class="page">
+      <h1>Ben Paternostro</h1>
+      <p class="headline">Senior Software Engineer</p>
+      <p class="contact">
+        Sydney, Australia &middot;
+        <a href="mailto:contact@benpaternostro.com">contact@benpaternostro.com</a> &middot;
+        <a href="https:&#x2F;&#x2F;benpaternostro.com">benpaternostro.com</a> &middot;
+        <a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;benpaternostro">LinkedIn</a>
+      </p>
+      <p class="summary">Full-stack engineer shipping customer-facing software with AI-assisted workflows, rigorous testing, and production observability.</p>
+      <hr class="top" />
+
+      <section>
+        <h2>Skills</h2>
+        
+        <div class="skill-row">
+          <span class="skill-label">AI Tooling:</span> Claude Code, Codex, GitHub Copilot, MCP, Agent Skills
+        </div>
+        
+        <div class="skill-row">
+          <span class="skill-label">Programming Languages:</span> TypeScript, JavaScript, C#, Python, Go, SQL, PowerShell, Bash
+        </div>
+        
+        <div class="skill-row">
+          <span class="skill-label">Cloud &amp; DevOps:</span> AWS, Azure, Kubernetes, Terraform, Docker, Azure DevOps, Buildkite, Octopus Deploy
+        </div>
+        
+        <div class="skill-row">
+          <span class="skill-label">Quality &amp; Observability:</span> Playwright, Test-Driven Development, Visual Regression, Contract Testing, Datadog, OpenTelemetry, RUM
+        </div>
+        
+        <div class="skill-row">
+          <span class="skill-label">Spoken Languages:</span> Spanish (Elementary)
+        </div>
+        
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Senior Software Engineer</span><span class="role-company"> &mdash; Greenstone Financial Services</span>
+            </div>
+            <div class="role-dates">Mar 2026 &ndash; Present</div>
+          </div>
+          <div class="role-summary">Own feature delivery and platform observability across customer-facing insurance and financial services portals serving tens of thousands of users.</div>
+          
+          <ul>
+            <li>Deliver most feature work with coding agents (Claude Code, Codex, GitHub Copilot), applying established planning and implementation patterns while managing context quality and model cost</li><li>Hold AI-written code to the same bar as any other change (TDD, review, observability), using MCP integrations to give agents the project context needed for planning and implementation</li><li>Led adoption of OpenTelemetry, OpenFeature (with LaunchDarkly), and Storybook, enabling end-to-end observability, progressive feature delivery, and component development with a visual-regression testing layer</li><li>Consolidated observability into Datadog (logs, metrics, traces, RUM) for unified system visibility</li><li>Improved the E2E framework to run in ~2 minutes by spinning up ephemeral environments in CI, bypassing third-party auth, caching sessions, and parallelising test execution</li><li>Built a self-service test-data API into the pre-prod login flow, replacing manual DB access and becoming the organisation&#x27;s default entry point to test environments</li><li>Moved the team to routine business-hours deployments, making out-of-hours releases and manual production validation the exception rather than the norm</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Senior Software QA Engineer</span><span class="role-company"> &mdash; Greenstone Financial Services</span>
+            </div>
+            <div class="role-dates">Mar 2025 &ndash; Feb 2026</div>
+          </div>
+          <div class="role-summary">Owned test automation strategy, frameworks, and test observability across customer-facing portals.</div>
+          
+          <ul>
+            <li>Designed and implemented a Playwright end-to-end testing framework replacing legacy Selenium</li><li>Integrated test framework into Azure DevOps pipelines for release-gated automation</li><li>Built custom Teams notifications and observability dashboards for test outcomes</li><li>Implemented visual regression testing for large-scale dynamic PDF rendering</li><li>Built API automation using generated OpenAPI clients to improve onboarding</li><li>Authored RFCs and engineering proposals covering continuous delivery, canary deployments, and test observability</li><li>Led workshops and pair-programming sessions to uplift QA and engineering teams</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">QA Automation Lead</span><span class="role-company"> &mdash; Simpology Australia</span>
+            </div>
+            <div class="role-dates">Mar 2024 &ndash; Jan 2025</div>
+          </div>
+          <div class="role-summary">Led company-wide automation strategy, roadmap, and platform implementation.</div>
+          
+          <ul>
+            <li>Defined organisational test automation strategy and rollout roadmap</li><li>Built Playwright E2E and Postman&#x2F;Newman API frameworks with CI&#x2F;CD integration</li><li>Drove shift-left testing and improved application testability with developer collaboration</li><li>Migrated legacy Cypress&#x2F;Selenium suites and implemented infrastructure automation</li><li>Embedded observability and business metrics for ROI and quality reporting</li><li>Mentored and upskilled manual testers into automation engineers through workshops, pairing, and documentation</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Senior Software QA Engineer</span><span class="role-company"> &mdash; DroneShield</span>
+            </div>
+            <div class="role-dates">Oct 2023 &ndash; Mar 2024</div>
+          </div>
+          <div class="role-summary">Owned QA automation and release quality for distributed systems and hardware&#x2F;software integration.</div>
+          
+          <ul>
+            <li>Designed and maintained automation frameworks in CI&#x2F;CD pipelines</li><li>Improved frontend and integration test coverage across complex distributed systems</li><li>Partnered with engineering teams on risk-based test planning and release readiness</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Senior Site Reliability Engineer</span><span class="role-company"> &mdash; Rokt</span>
+            </div>
+            <div class="role-dates">Feb 2023 &ndash; Sep 2023</div>
+          </div>
+          <div class="role-summary">Led reliability initiatives across cloud-native services with incident management ownership.</div>
+          
+          <ul>
+            <li>Led high-severity incidents through investigation, mitigation, and resolution, and facilitated incident-management training across teams</li><li>Implemented SLOs and tuned alerting strategies to reduce operational noise</li><li>Drove service-catalog ownership models, reliability scorecards, and service tiering</li><li>Supported full continuous delivery: releases gated only by automated tests, rolled out via Argo Rollouts, and monitored in Datadog with automated rollback</li><li>Built automation and tooling in Go, Python, Bash, and Terraform across AWS and Kubernetes</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Senior Software Engineer (QA)</span><span class="role-company"> &mdash; Rokt</span>
+            </div>
+            <div class="role-dates">May 2021 &ndash; Jan 2023</div>
+          </div>
+          <div class="role-summary">Built multi-language quality platforms for functional, contract, visual, and load testing across a 100+ service ecosystem.</div>
+          
+          <ul>
+            <li>Implemented Pact contract testing across more than a dozen services in multiple languages</li><li>Rolled out visual regression testing, reducing customer-reported UI defects and enabling safer CI&#x2F;CD deployments</li><li>Built k6 performance and load testing for experimentation and production traffic replay</li><li>Delivered company-wide training, demos, and framework handovers; received the company-wide &#x27;Hidden Value&#x27; award</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Software Engineer (QA)</span><span class="role-company"> &mdash; Rokt</span>
+            </div>
+            <div class="role-dates">Feb 2020 &ndash; May 2021</div>
+          </div>
+          <div class="role-summary">Built automation for microservices and ML-adjacent systems in an agile delivery environment.</div>
+          
+          <ul>
+            <li>Implemented functional, integration, and contract test coverage</li><li>Improved existing Selenium&#x2F;Gauge end-to-end framework</li><li>Collaborated cross-functionally on test strategy and edge-case design</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Software Development Engineer in Test</span><span class="role-company"> &mdash; Prospa</span>
+            </div>
+            <div class="role-dates">May 2019 &ndash; Jan 2020</div>
+          </div>
+          <div class="role-summary">Built reusable automation frameworks and enabled CI&#x2F;CD-based quality gates.</div>
+          
+          <ul>
+            <li>Built Protractor UI and Mocha&#x2F;Chai API test frameworks</li><li>Implemented Appium mobile automation and test-data generation tooling</li><li>Coached manual testers and developers on test automation practices</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Software Engineer</span><span class="role-company"> &mdash; Medical Director</span>
+            </div>
+            <div class="role-dates">Oct 2017 &ndash; Apr 2019</div>
+          </div>
+          <div class="role-summary">Worked across full-stack development, TDD, and CI&#x2F;CD automation in agile teams.</div>
+          
+          <ul>
+            <li>Delivered end-to-end product features</li><li>Maintained and improved CI&#x2F;CD pipelines</li><li>Contributed to test-first engineering practices</li>
+          </ul>
+          
+        </div>
+        
+        <div class="role">
+          <div class="role-head">
+            <div>
+              <span class="role-title">Graduate &#x2F; Junior Software Engineer</span><span class="role-company"> &mdash; Medical Director</span>
+            </div>
+            <div class="role-dates">Apr 2016 &ndash; Sep 2017</div>
+          </div>
+          <div class="role-summary">Joined through a graduate engineering program with rotations across software development and test automation.</div>
+          
+          <ul>
+            <li>Built feature automation and dashboard tooling</li><li>Delivered bug fixes and enhancements across frontend and backend systems</li>
+          </ul>
+          
+        </div>
+        
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <ul>
+          
+          <li><strong>Western Sydney University</strong> &mdash; Bachelor, Information and Communications Technology (2013&ndash;2016)</li>
+          
+          <li><strong>Austin Peay State University</strong> &mdash; Study Abroad Semester, Computer Science (2015&ndash;2015)</li>
+          
+        </ul>
+      </section>
+
+      
+      <section>
+        <h2>Honors &amp; Awards</h2>
+        <ul>
+          <li>Australian Computer Society Foundation Scholarship</li><li>Dean&#x27;s Merit List</li><li>Australian Government Scholarship</li>
+        </ul>
+      </section>
+      
+
+      
+      <section>
+        <h2>Selected Projects</h2>
+        <ul>
+          <li><strong>Angla</strong> &mdash; A fishing weather and Instagram-style social app. (<a href="https:&#x2F;&#x2F;angla.xyz&#x2F;">angla.xyz&#x2F;</a>)</li>
+        </ul>
+      </section>
+      
+    </main>
+
+    <p class="hint">Tip: in the print dialog, choose “Save as PDF” as the destination.</p>
+  </body>
+</html>
